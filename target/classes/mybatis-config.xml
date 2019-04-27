@@ -3,8 +3,19 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!-- 设置别名 -->
-    <typeAliases>
-        <package name="cn.temptation.domain" />
-    </typeAliases>
+
+	<!-- Mybatis 配置文件 -->
+
+
+	<!-- 设置别名 -->
+	<!-- 访问实体类就不用加上包名 -->
+	<typeAliases>
+		<package name="bai.temptation.entity" />
+	</typeAliases>
+
+	<!-- 加载映射文件 -->
+<!-- 	<mappers>
+		<mapper resource="bai/temptation/dao/UserMapper.xml" />
+	</mappers>
+ -->
 </configuration>

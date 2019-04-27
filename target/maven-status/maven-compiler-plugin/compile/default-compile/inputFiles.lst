@@ -1,3 +1,5 @@
-C:\Users\zjs\eclipse-workspace\test\src\main\java\cn\temptation\domain\User.java
-C:\Users\zjs\eclipse-workspace\test\src\main\java\cn\temptation\dao\UserDao.java
-C:\Users\zjs\eclipse-workspace\test\src\main\java\cn\temptation\web\UserController.java
+C:\Users\zjs\eclipse-workspace\test\src\main\java\bai\temptation\service\impl\UserServiceImpl.java
+C:\Users\zjs\eclipse-workspace\test\src\main\java\bai\temptation\entity\User.java
+C:\Users\zjs\eclipse-workspace\test\src\main\java\bai\temptation\controller\UserController.java
+C:\Users\zjs\eclipse-workspace\test\src\main\java\bai\temptation\dao\UserMapper.java
+C:\Users\zjs\eclipse-workspace\test\src\main\java\bai\temptation\service\IUserService.java

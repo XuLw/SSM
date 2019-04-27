@@ -45,6 +45,13 @@
 			<version>${spring.version}</version>
 		</dependency>
 
+		<!-- 4)Spring test -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
 		<!-- AOP相关包 -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
