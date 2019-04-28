@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+<meta charset="utf-8">
+<title>制造执行系统</title>
+<meta name="description" content="Dashboard">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+<!--Basic Styles-->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/weather-icons.min.css" rel="stylesheet">
+<link href="css/bootstrap-dialog.min.css" rel="stylesheet">
+<!--Beyond styles-->
+<link href="css/beyond.min.css" rel="stylesheet" type="text/css">
+<link href="css/demo.min.css" rel="stylesheet">
+<link href="css/typicons.min.css" rel="stylesheet">
+<link href="css/animate.min.css" rel="stylesheet">
+<link href="css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+<link href="css/dataTables/select.bootstrap.min.css" rel="stylesheet">
+<link href="css/dataTables/fixedColumns.bootstrap.min.css"
+	rel="stylesheet">
+<link href="css/multiselect/bootstrap-multiselect.css" rel="stylesheet">
+<link href="css/zTree/metroStyle.css" rel="stylesheet">
+<link href="css/datetime/bootstrap-datetimepicker.min.css"
+	rel="stylesheet">
+<link href="css/fuelux/wizard.css" rel="stylesheet" type="text/css">
+<!-- 自定义 -->
+<link href="css/customer.css" rel="stylesheet">
+<link href="css/jcrop/jquery.Jcrop.min.css" rel="stylesheet">
+
+<link href="js/editors/summernote.css" rel="stylesheet">
+
+<script src="js/skins.min.js"></script>
+<link href="css/skins/blue.min.css" rel="stylesheet">
+<!--Basic Scripts-->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-dialog.min.js"></script>
+<script src="js/validation/bootstrapValidator.js"></script>
+<script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+<!--Data table Scripts-->
+<script src="js/datatable/jquery.dataTables.js"></script>
+<script src="js/datatable/dataTables.bootstrap.js"></script>
+<script src="js/datatable/dataTables.select.min.js"></script>
+<script src="js/datatable/dataTables.fixedColumns.min.js"></script>
+<!--plugin Scripts-->
+<script src="js/multiselect/bootstrap-multiselect.js"></script>
+<script src="js/zTree/jquery.ztree.all.min.js"></script>
+<script src="js/customer-valid.js"></script>
+<script src="js/customer.js"></script>
+<script src="js/datetime/moment.min.js"></script>
+<script src="js/datetime/locales.min.js"></script>
+<script src="js/datetime/bootstrap-datetimepicker.min.js"></script>
+
+<script src="js/nouislider/nouislider.min.js"></script>
+
+<script src="js/jcrop/jquery.Jcrop.min.js"></script>
+<script src="js/jcrop/ajaxfileupload.js"></script>
+
+<script src="js/charts/morris/raphael-2.0.2.min.js"></script>
+<script src="js/charts/morris/morris.js"></script>
+<script src="js/charts/morris/morris-init.js"></script>
+<script src="js/editors/summernote.min.js"></script>
+<script src="js/editors/lang/summernote-zh-CN.js"></script>
+<script>
+	$.extend($.fn.dataTable.defaults, {
+	    "language": {url: 'js/datatable/zh_CN.json'}
+	});
+	
+	BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_DEFAULT] = '信息';
+	BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_INFO] = '信息';
+	BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_PRIMARY] = '信息';
+	BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_SUCCESS] = '成功';
+	BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_WARNING] = '警告';
+	BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_DANGER] = '错误';
+	BootstrapDialog.DEFAULT_TEXTS['OK'] = '确定';
+	BootstrapDialog.DEFAULT_TEXTS['CANCEL'] = '取消';
+	BootstrapDialog.DEFAULT_TEXTS['CONFIRM'] = '确认';
+	BootstrapDialog.DEFAULT_TEXTS['CLOSE'] = '关闭';
+</script>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body style="padding-right: 0px;" class="">
+	<!-- Loading Container -->
+	<div class="loading-container loading-inactive">
+		<div class="loader"></div>
+	</div>
+	<!--  /Loading Container -->
+	<!-- Navbar -->
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="navbar-container">
+				<!-- Navbar Barnd -->
+				<div class="navbar-header pull-left">
+					<a href="#" class="navbar-brand"> <small> <img
+							style="width: 50px; height: 40px;" src="img/zcqm.png" alt=""><b>制造执行系统</b>
+					</small>
+					</a>
+				</div>
+				<!-- /Navbar Barnd -->
+				<!-- Account Area and Settings --->
+				<div class="navbar-header pull-right">
+					<div class="navbar-account">
+						<ul class="account-area">
+							<li><a class=" dropdown-toggle" data-toggle="dropdown"
+								title="角色切换" href="#"> <i
+									class="icon glyphicon glyphicon-user"></i>
+							</a>
+								<ul
+									class="pull-right dropdown-menu dropdown-arrow dropdown-notifications">
+									<li><a
+										href="/platform/commonIndex/changeRoleCommit?roleId=ADMIN">
+											<div class="clearfix">
+												<div class="notification-icon">
+													<i class="fa fa-male bg-success white"></i>
+												</div>
+												<div class="notification-body">
+													<span class="title">管理员(ADMIN)</span> <span
+														class="description">组织名称:优良木业有限公司</span> <span
+														class="description">职位名称:董事长</span>
+												</div>
+											</div>
+									</a></li>
+									<li class="dropdown-footer "><span> 角色切换 </span></li>
+								</ul></li>
+							<li><a class="login-area dropdown-toggle"
+								data-toggle="dropdown">
+									<div class="avatar" title="查看个人设置">
+										<img
+											src="/platform/system/ctSysFile/showFileId?fileId=1528694295042001">
+									</div>
+									<section>
+										<h2>
+											<span class="profile"><span style="width: 95px;">admin</span></span>
+										</h2>
+									</section>
+							</a>
+								<ul
+									class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+									<li class="username"><a>admin</a></li>
+									<li class="email"><a>aarreess99601@163.com</a></li>
+									<!--Avatar Area-->
+									<li>
+										<div class="avatar-area">
+											<img
+												src="/platform/system/ctSysFile/showFileId?fileId=1528694295042001"
+												class="avatar"> <a href="#"
+												onclick="pictureChoosePanel(this,'/platform/commonIndex/changePhoto','更换图片');"><span
+												class="caption">更换图片</span></a>
+										</div>
+									</li>
+									<!--Avatar Area-->
+									<li class="edit"><a id="090-010" href="#"
+										class="pull-left"
+										onclick="confirmPage(this,&quot;/platform/commonSecurity/changePassword&quot;,{replaceId:&quot;pageContent&quot;});">修改密码</a>
+										<a id="090-100-080" href="#" class="pull-right"
+										onclick="confirmPage(this,&quot;/platform/security/ctSecUser/updateByMyself&quot;,{replaceId:&quot;pageContent&quot;});">个人设置</a>
+									</li>
+									<!--Theme Selector Area-->
+									<li class="theme-area">
+										<ul class="colorpicker" id="skin-changer">
+											<li><a class="colorpick-btn" href="#"
+												style="background-color: #5DB2FF;"
+												rel="css/skins/blue.min.css"></a></li>
+											<li><a class="colorpick-btn" href="#"
+												style="background-color: #2dc3e8;"
+												rel="css/skins/azure.min.css"></a></li>
+											<li><a class="colorpick-btn" href="#"
+												style="background-color: #03B3B2;"
+												rel="css/skins/teal.min.css"></a></li>
+											<li><a class="colorpick-btn" href="#"
+												style="background-color: #53a93f;"
+												rel="css/skins/green.min.css"></a></li>
+											<li><a class="colorpick-btn" href="#"
+												style="background-color: #FF8F32;"
+												rel="css/skins/orange.min.css"></a></li>
+											<li><a class="colorpick-btn" href="#"
+												style="background-color: #cc324b;"
+												rel="css/skins/pink.min.css"></a></li>
+											<li><a class="colorpick-btn" href="#"
+												style="background-color: #AC193D;"
+												rel="css/skins/darkred.min.css"></a></li>
+											<li><a class="colorpick-btn" href="#"
+												style="background-color: #8C0095;"
+												rel="css/skins/purple.min.css"></a></li>
+											<li><a class="colorpick-btn" href="#"
+												style="background-color: #0072C6;"
+												rel="css/skins/darkblue.min.css"></a></li>
+											<li><a class="colorpick-btn" href="#"
+												style="background-color: #585858;"
+												rel="css/skins/gray.min.css"></a></li>
+											<li><a class="colorpick-btn" href="#"
+												style="background-color: #474544;"
+												rel="css/skins/black.min.css"></a></li>
+											<li><a class="colorpick-btn" href="#"
+												style="background-color: #001940;"
+												rel="css/skins/deepblue.min.css"></a></li>
+										</ul>
+									</li>
+									<!--/Theme Selector Area-->
+									<li class="dropdown-footer"><a
+										href="/platform/commonSecurity/logout">注销</a></li>
+								</ul></li>
+						</ul>
+						<!-- Settings -->
+						<div class="setting">
+							<a id="btn-setting" title="设置" href="#"> <i
+								class="icon glyphicon glyphicon-cog"></i>
+							</a>
+						</div>
+						<div class="setting-container">
+							<label> <input name="language" checked=""
+								onclick="window.location.href='/platform/commonIndex/changeLanguageCommit?local=zh_CN'"
+								type="radio"> <span class="text">中文</span>
+							</label> <label> <input name="language"
+								onclick="window.location.href='/platform/commonIndex/changeLanguageCommit?local=en_US'"
+								type="radio"> <span class="text">English</span>
+							</label>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+	function pictureChoosePanel(obj, address, title, para) {
+		BootstrapDialog.show({
+			title : title,
+			size : BootstrapDialog.SIZE_WIDE,
+			closable : true,
+			closeByBackdrop : false,
+			closeByKeyboard : false,
+			message : $('<div></div>').load(address),
+			type : BootstrapDialog.TYPE_INFO
+		});
+	};
+</script>
+
+	<!-- Main Container -->
+	<div class="main-container container-fluid">
+		<!-- Page Container -->
+		<div class="page-container">
+			<div class="page-sidebar" id="sidebar">
+				<!-- Page Sidebar Header-->
+				<div class="sidebar-header-wrapper">
+					<input class="searchinput" id="functionSearchText"
+						onkeydown="enterSearch(event);" type="text"> <i
+						class="searchicon fa fa-search" onclick="searchFunction();"></i>
+					<div class="searchhelper">查找功能</div>
+				</div>
+				<!-- /Page Sidebar Header -->
+				<!-- Sidebar Menu -->
+				<ul class="nav sidebar-menu">
+					<!--Dashboard-->
+					<li><a href="/platform/commonIndex/main"> <i
+							class="menu-icon glyphicon glyphicon-home"></i> <span
+							class="menu-text"> 首页 </span>
+					</a></li>
+
+
+					<li><a id="010" href="#" class="menu-dropdown"> <i
+							class="menu-icon glyphicon glyphicon-comment"></i> <span
+							class="menu-text" id="menuText"> 工作台 </span> <i
+							class="menu-expand"></i>
+					</a>
+						<ul class="submenu">
+
+							<li><a id="010-009" href="#"
+								onclick="confirmPage(this,&quot;/platform/system/htSysNotice/workplaceUse&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1489558363176004&quot;});">
+									<i class="menu-icon glyphicon glyphicon-volume-up"></i> <span
+									class="menu-text" id="menuText"> 系统说明 </span>
+
+							</a></li>
+							<li><a id="010-010" href="#"
+								onclick="confirmPage(this,&quot;/platform/system/htSysNotice/workplaceShow&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1489558363176003&quot;});">
+									<i class="menu-icon glyphicon glyphicon-volume-up"></i> <span
+									class="menu-text" id="menuText"> 通知 </span>
+
+							</a></li>
+							<li><a id="010-030" href="#"
+								onclick="confirmPage(this,&quot;/platform/system/workflow/activiti/showAuditTasks&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1481589800657003&quot;});">
+									<i class="menu-icon glyphicon glyphicon-th-list"></i> <span
+									class="menu-text" id="menuText"> 待审批任务 </span>
+
+							</a></li>
+							<li><a id="010-040" href="#"
+								onclick="confirmPage(this,&quot;/platform/system/workflow/activiti/showUserHandleHistory&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1481763569782001&quot;});">
+									<i class="menu-icon glyphicon glyphicon-ok"></i> <span
+									class="menu-text" id="menuText"> 已审核任务 </span>
+
+							</a></li>
+
+						</ul></li>
+					<li class=""><a id="020" href="#" class="menu-dropdown"> <i
+							class="menu-icon glyphicon glyphicon-list-alt"></i> <span
+							class="menu-text" id="menuText"> 基本资料 </span> <i
+							class="menu-expand"></i>
+					</a>
+						<ul class="submenu" style="display: none;">
+
+							<li><a id="020-010" href="#"
+								onclick="confirmPage(this,&quot;/mes/back/ctBasLocationType/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160229102346000049&quot;});">
+									<i class="menu-icon glyphicon glyphicon-flag"></i> <span
+									class="menu-text" id="menuText"> 区域类型 </span>
+
+							</a></li>
+							<li><a id="020-020" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160229113246000545&quot;});">
+									<i class="menu-icon glyphicon glyphicon-th-large"></i> <span
+									class="menu-text" id="menuText"> 区域 </span>
+
+							</a></li>
+							<li><a id="020-040" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160302145702000788&quot;});">
+									<i class="menu-icon glyphicon glyphicon-usd"></i> <span
+									class="menu-text" id="menuText"> 计量单位 </span>
+
+							</a></li>
+							<li><a id="020-050" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160302154353000813&quot;});">
+									<i class="menu-icon glyphicon glyphicon-tower"></i> <span
+									class="menu-text" id="menuText"> 容器类型 </span>
+
+							</a></li>
+							<li><a id="020-060" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160302160903000293&quot;});">
+									<i class="menu-icon glyphicon glyphicon-trash"></i> <span
+									class="menu-text" id="menuText"> 容器 </span>
+
+							</a></li>
+							<li><a id="020-070" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160303164224000272&quot;});">
+									<i class="menu-icon glyphicon glyphicon-adjust"></i> <span
+									class="menu-text" id="menuText"> 图纸类型 </span>
+
+							</a></li>
+							<li><a id="020-080" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160303170937000345&quot;});">
+									<i class="menu-icon glyphicon glyphicon-picture"></i> <span
+									class="menu-text" id="menuText"> 图纸 </span>
+
+							</a></li>
+							<li><a id="020-090" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160322103135000548&quot;});">
+									<i class="menu-icon glyphicon glyphicon-tasks"></i> <span
+									class="menu-text" id="menuText"> 订单类型 </span>
+
+							</a></li>
+							<li><a id="020-100" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160511202310000814&quot;});">
+									<i class="menu-icon glyphicon glyphicon-file"></i> <span
+									class="menu-text" id="menuText"> 单据类型 </span>
+
+							</a></li>
+							<li><a id="020-110" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1477637849204001&quot;});">
+									<i class="menu-icon glyphicon glyphicon-align-justify"></i> <span
+									class="menu-text" id="menuText"> 产线 </span>
+
+							</a></li>
+
+						</ul></li>
+					<li class=""><a id="021" href="#" class="menu-dropdown"> <i
+							class="menu-icon glyphicon glyphicon-shopping-cart"></i> <span
+							class="menu-text" id="menuText"> 销售管理 </span> <i
+							class="menu-expand"></i>
+					</a>
+						<ul class="submenu" style="display: none;">
+
+							<li><a id="021-010" href="#"
+								onclick="confirmPage(this,&quot;/mes/back/ctProPart/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;2016030808365748&quot;});">
+									<i class="menu-icon glyphicon glyphicon-phone"></i> <span
+									class="menu-text" id="menuText"> 产品版本 </span>
+
+							</a></li>
+							<li><a id="021-020" href="#"
+								onclick="confirmPage(this,&quot;/mes/back/ctBasCustomer/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;2016030214080212&quot;});">
+									<i class="menu-icon glyphicon glyphicon-earphone"></i> <span
+									class="menu-text" id="menuText"> 客户信息 </span>
+
+							</a></li>
+							<li><a id="021-030" href="#"
+								onclick="confirmPage(this,&quot;/mes/front/rtCrmOrder/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;2018030808365748&quot;});">
+									<i class="menu-icon glyphicon glyphicon-list-alt"></i> <span
+									class="menu-text" id="menuText"> 销售订单 </span>
+
+							</a></li>
+
+						</ul></li>
+					<li class=""><a id="030" href="#" class="menu-dropdown"> <i
+							class="menu-icon glyphicon glyphicon-th-list"></i> <span
+							class="menu-text" id="menuText"> 工艺管理 </span> <i
+							class="menu-expand"></i>
+					</a>
+						<ul class="submenu" style="display: none;">
+
+							<li class=""><a id="030-010" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160307164351000245&quot;});">
+									<i class="menu-icon glyphicon glyphicon-tags"></i> <span
+									class="menu-text" id="menuText"> 技术类型 </span>
+
+							</a></li>
+							<li class=""><a id="030-070" href="#"
+								onclick="confirmPage(this,&quot;/mes/back/ctProParameter/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160308142608000321&quot;});">
+									<i class="menu-icon glyphicon glyphicon-usd"></i> <span
+									class="menu-text" id="menuText"> 工艺参数 </span>
+
+							</a></li>
+							<li class=""><a id="030-080" href="#"
+								onclick="confirmPage(this,&quot;/mes/back/ctProCheck/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160309153736000958&quot;});">
+									<i class="menu-icon glyphicon glyphicon-plus-sign"></i> <span
+									class="menu-text" id="menuText"> 逻辑运算 </span>
+
+							</a></li>
+							<li class=""><a id="030-090" href="#"
+								onclick="confirmPage(this,&quot;/mes/back/ctProRecipe/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160309210448000325&quot;});">
+									<i class="menu-icon glyphicon glyphicon-cutlery"></i> <span
+									class="menu-text" id="menuText"> 工序 </span>
+
+							</a></li>
+							<li class=""><a id="030-100" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160310165044000952&quot;});">
+									<i class="menu-icon glyphicon glyphicon-tasks"></i> <span
+									class="menu-text" id="menuText"> 工序阶段 </span>
+
+							</a></li>
+							<li class=""><a id="030-110" href="#"
+								onclick="confirmPage(this,&quot;/mes/back/ctProRouteVersionDetail/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160311091440000678&quot;});">
+									<i class="menu-icon glyphicon glyphicon-indent-left"></i> <span
+									class="menu-text" id="menuText"> 工艺路线设制 </span>
+
+							</a></li>
+
+						</ul></li>
+					<li class=""><a id="040" href="#" class="menu-dropdown"> <i
+							class="menu-icon glyphicon glyphicon-inbox"></i> <span
+							class="menu-text" id="menuText"> 设备管理 </span> <i
+							class="menu-expand"></i>
+					</a>
+						<ul class="submenu" style="display: none;">
+
+							<li class=""><a id="040-010" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160317145637000096&quot;});">
+									<i class="menu-icon glyphicon glyphicon-align-justify"></i> <span
+									class="menu-text" id="menuText"> 设备类型 </span>
+
+							</a></li>
+							<li class=""><a id="040-020" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160317161633000874&quot;});">
+									<i class="menu-icon glyphicon glyphicon-list-alt"></i> <span
+									class="menu-text" id="menuText"> 设备基本信息 </span>
+
+							</a></li>
+							<li class=""><a id="040-030" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160317171013000128&quot;});">
+									<i class="menu-icon glyphicon glyphicon-saved"></i> <span
+									class="menu-text" id="menuText"> 设备能力 </span>
+
+							</a></li>
+							<li class=""><a id="040-040" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1478656234399002&quot;});">
+									<i class="menu-icon glyphicon glyphicon-filter"></i> <span
+									class="menu-text" id="menuText"> 上料口 </span>
+
+							</a></li>
+
+						</ul></li>
+					<li class="open"><a id="050" href="#" class="menu-dropdown">
+							<i class="menu-icon glyphicon glyphicon-thumbs-up"></i> <span
+							class="menu-text" id="menuText"> 质量管理 </span> <i
+							class="menu-expand"></i>
+					</a>
+						<ul class="submenu" style="display: block;">
+
+							<li class="active"><a id="050-010" href="#"
+								onclick="confirmPage(this,&quot;/mes/back/ctQulDataCollection/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160318145936000904&quot;});">
+									<i class="menu-icon glyphicon glyphicon-floppy-saved"></i> <span
+									class="menu-text" id="menuText"> 数据采集 </span>
+
+							</a></li>
+							<li><a id="050-020" href="#"
+								onclick="confirmPage(this,&quot;/mes/back/ctQulDcGroup/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160318154228000504&quot;});">
+									<i class="menu-icon glyphicon glyphicon-indent-left"></i> <span
+									class="menu-text" id="menuText"> 数据采集组 </span>
+
+							</a></li>
+							<li><a id="050-030" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160322091456000708&quot;});">
+									<i class="menu-icon glyphicon glyphicon-random"></i> <span
+									class="menu-text" id="menuText"> 产品/设备关联 </span>
+
+							</a></li>
+
+						</ul></li>
+					<li><a id="060" href="#" class="menu-dropdown"> <i
+							class="menu-icon glyphicon glyphicon-calendar"></i> <span
+							class="menu-text" id="menuText"> 工单管理 </span> <i
+							class="menu-expand"></i>
+					</a>
+						<ul class="submenu">
+
+							<li><a id="060-010" href="#"
+								onclick="confirmPage(this,&quot;/mes/front/rtWrkOrder/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160322113646000819&quot;});">
+									<i class="menu-icon glyphicon glyphicon-th-large"></i> <span
+									class="menu-text" id="menuText"> 生产订单 </span>
+
+							</a></li>
+							<li><a id="060-020" href="#"
+								onclick="confirmPage(this,&quot;/mes/front/rtWrkWork/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160328205932000740&quot;});">
+									<i class="menu-icon glyphicon glyphicon-th"></i> <span
+									class="menu-text" id="menuText"> 生产工单 </span>
+
+							</a></li>
+							<li><a id="060-030" href="#"
+								onclick="confirmPage(this,&quot;/mes/front/rtWrkTask/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160405160115000572&quot;});">
+									<i class="menu-icon glyphicon glyphicon-play"></i> <span
+									class="menu-text" id="menuText"> 生产任务 </span>
+
+							</a></li>
+							<li><a id="060-040" href="#"
+								onclick="confirmPage(this,&quot;/mes/front/taskReportChange/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160407142029000220&quot;});">
+									<i class="menu-icon glyphicon glyphicon-edit"></i> <span
+									class="menu-text" id="menuText"> 报工修改 </span>
+
+							</a></li>
+
+						</ul></li>
+					<li><a id="070" href="#" class="menu-dropdown"> <i
+							class="menu-icon glyphicon glyphicon-forward"></i> <span
+							class="menu-text" id="menuText"> 生产执行 </span> <i
+							class="menu-expand"></i>
+					</a>
+						<ul class="submenu">
+
+							<li><a id="070-005" href="#"
+								onclick="confirmPage(this,&quot; /mes/front/runLot/printCode&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1492221330895004&quot;});">
+									<i class="menu-icon glyphicon glyphicon-transfer"></i> <span
+									class="menu-text" id="menuText"> 打印标签 </span>
+
+							</a></li>
+							<li><a id="070-010" href="#"
+								onclick="confirmPage(this,&quot;/mes/front/rtWrkPortMaterial/addMaterialByStep&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1479344812818002&quot;});">
+									<i class="menu-icon glyphicon glyphicon-compressed"></i> <span
+									class="menu-text" id="menuText"> 上料 </span>
+
+							</a></li>
+							<li><a id="070-020" href="#"
+								onclick="confirmPage(this,&quot;/mes/front/rtWrkPortMaterial/removeMaterial&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1491976966156006&quot;});">
+									<i class="menu-icon glyphicon glyphicon-share-alt"></i> <span
+									class="menu-text" id="menuText"> 卸料 </span>
+
+							</a></li>
+							<li><a id="070-030" href="#"
+								onclick="confirmPage(this,&quot;/mes/front/runLot/trackIn&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1478654771757002&quot;});">
+									<i class="menu-icon glyphicon glyphicon-import"></i> <span
+									class="menu-text" id="menuText"> 上机 </span>
+
+							</a></li>
+							<li><a id="070-040" href="#"
+								onclick="confirmPage(this,&quot;/mes/front/runLot/trackOut&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1488783374219001&quot;});">
+									<i class="menu-icon glyphicon glyphicon-export"></i> <span
+									class="menu-text" id="menuText"> 下机 </span>
+
+							</a></li>
+							<li><a id="070-070" href="#"
+								onclick="confirmPage(this,&quot;/mes/front/htQulDataCollection/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160418094258000385&quot;});">
+									<i class="menu-icon glyphicon glyphicon-list-alt"></i> <span
+									class="menu-text" id="menuText"> 数据收集 </span>
+
+							</a></li>
+
+						</ul></li>
+					<li><a id="080" href="#" class="menu-dropdown"> <i
+							class="menu-icon fa  fa-home"></i> <span class="menu-text"
+							id="menuText"> 成品管理 </span> <i class="menu-expand"></i>
+					</a>
+						<ul class="submenu">
+
+							<li><a id="080-010" href="#" class="menu-dropdown"> <i
+									class="menu-icon glyphicon glyphicon-wrench"></i> <span
+									class="menu-text" id="menuText"> 基础数据 </span> <i
+									class="menu-expand"></i>
+							</a>
+								<ul class="submenu">
+
+									<li><a id="080-010-010" href="#"
+										onclick="confirmPage(this,&quot;/mes/back/ctProRoute/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160309091527000727&quot;});">
+											<i class="menu-icon glyphicon glyphicon-road"></i> <span
+											class="menu-text" id="menuText"> 流程 </span>
+
+									</a></li>
+									<li><a id="080-010-020" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160307171555000925&quot;});">
+											<i class="menu-icon glyphicon glyphicon-tasks"></i> <span
+											class="menu-text" id="menuText"> 产品类型 </span>
+
+									</a></li>
+									<li><a id="080-010-040" href="#"
+										onclick="confirmPage(this,&quot;/mes/back/ctProPartComponent/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160329093834000444&quot;});">
+											<i class="menu-icon glyphicon glyphicon-list-alt"></i> <span
+											class="menu-text" id="menuText"> BOM管理 </span>
+
+									</a></li>
+
+								</ul></li>
+							<li><a id="080-040" href="#"
+								onclick="confirmPage(this,&quot;/wms/front/wmsCtMrlMaterial/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160503091312000209&quot;});">
+									<i class="menu-icon glyphicon glyphicon-shopping-cart"></i> <span
+									class="menu-text" id="menuText"> 成品信息 </span>
+
+							</a></li>
+							<li><a id="080-050" href="#" class="menu-dropdown"> <i
+									class="menu-icon glyphicon glyphicon-check"></i> <span
+									class="menu-text" id="menuText"> 成品入库 </span> <i
+									class="menu-expand"></i>
+							</a>
+								<ul class="submenu">
+
+									<li><a id="080-050-010" href="#"
+										onclick="confirmPage(this,&quot;/wms/front/materialInput/workInput&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160504113609000950&quot;});">
+											<i class="menu-icon glyphicon glyphicon-barcode"></i> <span
+											class="menu-text" id="menuText"> 工单入库 </span>
+
+									</a></li>
+
+								</ul></li>
+							<li><a id="080-060" href="#" class="menu-dropdown"> <i
+									class="menu-icon glyphicon glyphicon-share-alt"></i> <span
+									class="menu-text" id="menuText"> 成品出库 </span> <i
+									class="menu-expand"></i>
+							</a>
+								<ul class="submenu">
+
+									<li><a id="080-060-010" href="#"
+										onclick="confirmPage(this,&quot;/wms/front/materialOutput/workOutput&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160518095753000095&quot;});">
+											<i class="menu-icon glyphicon glyphicon-barcode"></i> <span
+											class="menu-text" id="menuText"> 订单出库 </span>
+
+									</a></li>
+
+								</ul></li>
+
+						</ul></li>
+					<li><a id="090" href="#" class="menu-dropdown"> <i
+							class="menu-icon glyphicon glyphicon-th"></i> <span
+							class="menu-text" id="menuText"> 物料管理 </span> <i
+							class="menu-expand"></i>
+					</a>
+						<ul class="submenu">
+
+							<li><a id="090-010" href="#" class="menu-dropdown"> <i
+									class="menu-icon glyphicon glyphicon-wrench"></i> <span
+									class="menu-text" id="menuText"> 基础数据 </span> <i
+									class="menu-expand"></i>
+							</a>
+								<ul class="submenu">
+
+									<li><a id="090-010-020" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1482288359363001&quot;});">
+											<i class="menu-icon glyphicon glyphicon-hand-up"></i> <span
+											class="menu-text" id="menuText"> 重要程度 </span>
+
+									</a></li>
+									<li><a id="090-010-030" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1482288359363065&quot;});">
+											<i class="menu-icon glyphicon glyphicon-usd"></i> <span
+											class="menu-text" id="menuText"> 财务分类 </span>
+
+									</a></li>
+									<li><a id="090-010-040" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1482288359363122&quot;});">
+											<i class="menu-icon glyphicon glyphicon-th"></i> <span
+											class="menu-text" id="menuText"> 采购分类 </span>
+
+									</a></li>
+									<li><a id="090-010-050" href="#"
+										onclick="confirmPage(this,&quot;/srm/back/srmCtMrlNature/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1482288359363171&quot;});">
+											<i class="menu-icon glyphicon glyphicon-th-list"></i> <span
+											class="menu-text" id="menuText"> 物资分类 </span>
+
+									</a></li>
+									<li><a id="090-010-080" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1482288359363183&quot;});">
+											<i class="menu-icon glyphicon glyphicon-flag"></i> <span
+											class="menu-text" id="menuText"> 厂牌 </span>
+
+									</a></li>
+
+								</ul></li>
+							<li><a id="090-030" href="#"
+								onclick="confirmPage(this,&quot;/srm/front/srmCtMrlStandard/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1483578158323006&quot;});">
+									<i class="menu-icon glyphicon glyphicon-list"></i> <span
+									class="menu-text" id="menuText"> 采购标准 </span>
+
+							</a></li>
+							<li><a id="090-040" href="#"
+								onclick="confirmPage(this,&quot;/srm/front/srmCtMrlMaterial/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1483667811583001&quot;});">
+									<i class="menu-icon glyphicon glyphicon-shopping-cart"></i> <span
+									class="menu-text" id="menuText"> 物料 </span>
+
+							</a></li>
+							<li><a id="090-050" href="#"
+								onclick="confirmPage(this,&quot;/srm/front/srmHtMrlMaterialImport/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1493358068998002&quot;});">
+									<i class="menu-icon glyphicon glyphicon-import"></i> <span
+									class="menu-text" id="menuText"> 物料导入 </span>
+
+							</a></li>
+							<li><a id="090-060" href="#" class="menu-dropdown"> <i
+									class="menu-icon glyphicon glyphicon-check"></i> <span
+									class="menu-text" id="menuText"> 物料入库 </span> <i
+									class="menu-expand"></i>
+							</a>
+								<ul class="submenu">
+
+									<li><a id="090-060-010" href="#"
+										onclick="confirmPage(this,&quot;/srm/front/materialInput/poInput&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1466663820045265&quot;});">
+											<i class="menu-icon fa fa-shopping-cart"></i> <span
+											class="menu-text" id="menuText"> 采购入库 </span>
+
+									</a></li>
+
+								</ul></li>
+							<li><a id="090-070" href="#" class="menu-dropdown"> <i
+									class="menu-icon glyphicon glyphicon-share-alt"></i> <span
+									class="menu-text" id="menuText"> 物料出库 </span> <i
+									class="menu-expand"></i>
+							</a>
+								<ul class="submenu">
+
+									<li><a id="090-070-010" href="#"
+										onclick="confirmPage(this,&quot;/srm/front/materialOutput/workOutput&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;2016051809553095&quot;});">
+											<i class="menu-icon glyphicon glyphicon-barcode"></i> <span
+											class="menu-text" id="menuText"> 工单领料 </span>
+
+									</a></li>
+
+								</ul></li>
+
+						</ul></li>
+					<li><a id="100" href="#" class="menu-dropdown"> <i
+							class="menu-icon glyphicon glyphicon-plane"></i> <span
+							class="menu-text" id="menuText"> 供应商管理 </span> <i
+							class="menu-expand"></i>
+					</a>
+						<ul class="submenu">
+
+							<li><a id="100-010" href="#" class="menu-dropdown"> <i
+									class="menu-icon glyphicon glyphicon-wrench"></i> <span
+									class="menu-text" id="menuText"> 基础数据 </span> <i
+									class="menu-expand"></i>
+							</a>
+								<ul class="submenu">
+
+									<li><a id="100-010-010" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1488329441517011&quot;});">
+											<i class="menu-icon glyphicon glyphicon-th"></i> <span
+											class="menu-text" id="menuText"> 文档类型 </span>
+
+									</a></li>
+									<li><a id="100-010-020" href="#"
+										onclick="confirmPage(this,&quot;/srm/back/srmCtSplDocument/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1488329441517015&quot;});">
+											<i class="menu-icon glyphicon glyphicon-list-alt"></i> <span
+											class="menu-text" id="menuText"> 资质文档 </span>
+
+									</a></li>
+									<li><a id="100-010-030" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1488329441517019&quot;});">
+											<i class="menu-icon glyphicon glyphicon-euro"></i> <span
+											class="menu-text" id="menuText"> 币种 </span>
+
+									</a></li>
+									<li><a id="100-010-040" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1488329441517023&quot;});">
+											<i class="menu-icon glyphicon glyphicon-tasks"></i> <span
+											class="menu-text" id="menuText"> 企业类型 </span>
+
+									</a></li>
+									<li><a id="100-010-050" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1488329441517027&quot;});">
+											<i class="menu-icon glyphicon glyphicon-road"></i> <span
+											class="menu-text" id="menuText"> 占地性质 </span>
+
+									</a></li>
+									<li><a id="100-010-060" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1488340310523009&quot;});">
+											<i class="menu-icon glyphicon glyphicon-random"></i> <span
+											class="menu-text" id="menuText"> 经营性质 </span>
+
+									</a></li>
+									<li><a id="100-010-070" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1488340310523013&quot;});">
+											<i class="menu-icon glyphicon glyphicon-usd"></i> <span
+											class="menu-text" id="menuText"> 发票税率 </span>
+
+									</a></li>
+									<li><a id="100-010-080" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1488340310523017&quot;});">
+											<i class="menu-icon glyphicon glyphicon-resize-small"></i> <span
+											class="menu-text" id="menuText"> 付款条件 </span>
+
+									</a></li>
+									<li><a id="100-010-090" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1488340310523021&quot;});">
+											<i class="menu-icon glyphicon glyphicon-th-list"></i> <span
+											class="menu-text" id="menuText"> 付款资料 </span>
+
+									</a></li>
+									<li><a id="100-010-100" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1488340310523025&quot;});">
+											<i class="menu-icon glyphicon glyphicon-ok"></i> <span
+											class="menu-text" id="menuText"> 立账条件 </span>
+
+									</a></li>
+									<li><a id="100-010-110" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1488340310523029&quot;});">
+											<i class="menu-icon glyphicon glyphicon-share-alt"></i> <span
+											class="menu-text" id="menuText"> 收货原则 </span>
+
+									</a></li>
+									<li><a id="100-010-120" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1488340310523033&quot;});">
+											<i class="menu-icon glyphicon glyphicon-qrcode"></i> <span
+											class="menu-text" id="menuText"> 税组合 </span>
+
+									</a></li>
+
+								</ul></li>
+							<li><a id="100-030" href="#"
+								onclick="confirmPage(this,&quot;/srm/front/srmCtSplEnterprise/admittance&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1488521316560002&quot;});">
+									<i class="menu-icon glyphicon glyphicon-ok"></i> <span
+									class="menu-text" id="menuText"> 供应商准入 </span>
+
+							</a></li>
+							<li><a id="100-040" href="#"
+								onclick="confirmPage(this,&quot;/srm/front/srmCtSplEnterprise/qualificationManage&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1489131855040002&quot;});">
+									<i class="menu-icon glyphicon glyphicon-retweet"></i> <span
+									class="menu-text" id="menuText"> 资质管理 </span>
+
+							</a></li>
+							<li><a id="100-050" href="#"
+								onclick="confirmPage(this,&quot;/srm/front/srmCtSplEnterprise/showNotice&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1489567218060001&quot;});">
+									<i class="menu-icon glyphicon glyphicon-envelope"></i> <span
+									class="menu-text" id="menuText"> 供应商通知 </span>
+
+							</a></li>
+							<li><a id="100-060" href="#"
+								onclick="confirmPage(this,&quot;/srm/front/srmCtSplEnterprise/prefectInformation&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1488523402384003&quot;});">
+									<i class="menu-icon glyphicon glyphicon-asterisk"></i> <span
+									class="menu-text" id="menuText"> 完善信息 </span>
+
+							</a></li>
+							<li><a id="100-070" href="#" class="menu-dropdown"> <i
+									class="menu-icon glyphicon glyphicon-envelope"></i> <span
+									class="menu-text" id="menuText"> 招投标管理 </span> <i
+									class="menu-expand"></i>
+							</a>
+								<ul class="submenu">
+
+									<li><a id="100-070-010" href="#" class="menu-dropdown">
+											<i class="menu-icon glyphicon glyphicon-tree-conifer"></i> <span
+											class="menu-text" id="menuText"> 基础信息 </span> <i
+											class="menu-expand"></i>
+									</a>
+										<ul class="submenu">
+
+											<li><a id="100-070-010-010" href="#"
+												onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1487038752244010&quot;});">
+													<i class="menu-icon glyphicon glyphicon-th-list"></i> <span
+													class="menu-text" id="menuText"> 评审项 </span>
+
+											</a></li>
+											<li><a id="100-070-010-020" href="#"
+												onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1487060871984001&quot;});">
+													<i class="menu-icon glyphicon glyphicon-user"></i> <span
+													class="menu-text" id="menuText"> 评标专家 </span>
+
+											</a></li>
+
+										</ul></li>
+									<li><a id="100-070-020" href="#" class="menu-dropdown">
+											<i class="menu-icon glyphicon glyphicon-envelope"></i> <span
+											class="menu-text" id="menuText"> 查看各种信息 </span> <i
+											class="menu-expand"></i>
+									</a>
+										<ul class="submenu">
+
+											<li><a id="100-070-020-010" href="#"
+												onclick="confirmPage(this,&quot;/srm/front/srmCtBidProject/viewProjectInfo&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1489540945285001&quot;});">
+													<i class="menu-icon glyphicon glyphicon-volume-up"></i> <span
+													class="menu-text" id="menuText"> 招标项目信息 </span>
+
+											</a></li>
+											<li><a id="100-070-020-020" href="#"
+												onclick="confirmPage(this,&quot;/srm/front/srmCtBidProject/viewProjectNotice&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1489742810701001&quot;});">
+													<i class="menu-icon glyphicon glyphicon-volume-up"></i> <span
+													class="menu-text" id="menuText"> 查看招标公告 </span>
+
+											</a></li>
+											<li><a id="100-070-020-030" href="#"
+												onclick="confirmPage(this,&quot;/srm/front/srmCtBidProject/viewChangeProjectNotice&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1490080074083002&quot;});">
+													<i class="menu-icon glyphicon glyphicon-volume-up"></i> <span
+													class="menu-text" id="menuText"> 变更公告信息 </span>
+
+											</a></li>
+											<li><a id="100-070-020-040" href="#"
+												onclick="confirmPage(this,&quot;/srm/front/srmCtBidProject/publishResult&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1491650637370006&quot;});">
+													<i class="menu-icon glyphicon glyphicon-volume-up"></i> <span
+													class="menu-text" id="menuText"> 查看中标公示 </span>
+
+											</a></li>
+											<li><a id="100-070-020-050" href="#"
+												onclick="confirmPage(this,&quot;/srm/front/srmCtBidProject/viewBidWinnerNotice&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1491650637370007&quot;});">
+													<i class="menu-icon glyphicon glyphicon-volume-up"></i> <span
+													class="menu-text" id="menuText"> 查看中标通知书 </span>
+
+											</a></li>
+											<li><a id="100-070-020-060" href="#"
+												onclick="confirmPage(this,&quot;/srm/front/srmCtBidProject/viewTerminateProjectNotice&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1493016444352001&quot;});">
+													<i class="menu-icon glyphicon glyphicon-volume-up"></i> <span
+													class="menu-text" id="menuText"> 查看招标终止公告 </span>
+
+											</a></li>
+
+										</ul></li>
+									<li><a id="100-070-050" href="#"
+										onclick="confirmPage(this,&quot;/srm/front/srmCtBidProject/show?projectType=P&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1487127936721001&quot;});">
+											<i class="menu-icon glyphicon glyphicon-saved"></i> <span
+											class="menu-text" id="menuText"> 公开招投标 </span>
+
+									</a></li>
+									<li><a id="100-070-060" href="#"
+										onclick="confirmPage(this,&quot;/srm/front/srmCtBidProject/show?projectType=I&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1488249387266010&quot;});">
+											<i class="menu-icon glyphicon glyphicon-user"></i> <span
+											class="menu-text" id="menuText"> 邀请招投标 </span>
+
+									</a></li>
+									<li><a id="100-070-070" href="#" class="menu-dropdown">
+											<i class="menu-icon glyphicon glyphicon-italic"></i> <span
+											class="menu-text" id="menuText"> 单一来源采购 </span> <i
+											class="menu-expand"></i>
+									</a>
+										<ul class="submenu">
+
+											<li><a id="100-070-040" href="#"
+												onclick="confirmPage(this,&quot;/srm/front/srmRtBidRstEnterprise/depositShow&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1490166080614003&quot;});">
+													<i class="menu-icon glyphicon glyphicon-usd"></i> <span
+													class="menu-text" id="menuText"> 保证金 </span>
+
+											</a></li>
+
+										</ul></li>
+									<li><a id="100-070-080" href="#"
+										onclick="confirmPage(this,&quot;/srm/front/srmCtBidProject/changeShow&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1489989774702002&quot;});">
+											<i class="menu-icon glyphicon glyphicon-repeat"></i> <span
+											class="menu-text" id="menuText"> 招标变更 </span>
+
+									</a></li>
+									<li><a id="100-070-090" href="#"
+										onclick="confirmPage(this,&quot;/srm/front/srmRtBidRstSpecialist/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1490085710206002&quot;});">
+											<i class="menu-icon glyphicon glyphicon-user"></i> <span
+											class="menu-text" id="menuText"> 选取评标专家 </span>
+
+									</a></li>
+									<li><a id="100-070-110" href="#"
+										onclick="confirmPage(this,&quot;/srm/front/srmCtBidProject/openBidShow&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1490235052631001&quot;});">
+											<i class="menu-icon glyphicon glyphicon-fullscreen"></i> <span
+											class="menu-text" id="menuText"> 开标 </span>
+
+									</a></li>
+									<li><a id="100-070-120" href="#"
+										onclick="confirmPage(this,&quot;/srm/front/srmRtBidRstSpecialist/specialistEvaluateShow&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1490586483613001&quot;});">
+											<i class="menu-icon glyphicon glyphicon-list"></i> <span
+											class="menu-text" id="menuText"> 专家评标 </span>
+
+									</a></li>
+									<li><a id="100-070-130" href="#"
+										onclick="confirmPage(this,&quot;/srm/front/srmRtBidRstContract/showProject&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1491792567735002&quot;});">
+											<i class="menu-icon fa fa-handshake-o"></i> <span
+											class="menu-text" id="menuText"> 签订合同 </span>
+
+									</a></li>
+									<li><a id="100-070-140" href="#"
+										onclick="confirmPage(this,&quot;/srm/front/srmHtBidQuestion/showProject&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1492586022572002&quot;});">
+											<i class="menu-icon fa fa-question-circle"></i> <span
+											class="menu-text" id="menuText"> 招投标质疑 </span>
+
+									</a></li>
+									<li><a id="100-070-150" href="#"
+										onclick="confirmPage(this,&quot;/srm/front/srmCtBidProject/bidTerminateShow&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1493000073916003&quot;});">
+											<i class="menu-icon glyphicon glyphicon-remove-sign"></i> <span
+											class="menu-text" id="menuText"> 招标终止 </span>
+
+									</a></li>
+
+								</ul></li>
+							<li><a id="100-080" href="#" class="menu-dropdown"> <i
+									class="menu-icon glyphicon glyphicon-search"></i> <span
+									class="menu-text" id="menuText"> 常用查询 </span> <i
+									class="menu-expand"></i>
+							</a>
+								<ul class="submenu">
+
+									<li><a id="100-080-020" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1493773166501013&quot;});">
+											<i class="menu-icon glyphicon glyphicon-th-list"></i> <span
+											class="menu-text" id="menuText"> 历史招标项目 </span>
+
+									</a></li>
+									<li><a id="100-080-030" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1493858783148001&quot;});">
+											<i class="menu-icon glyphicon glyphicon-play"></i> <span
+											class="menu-text" id="menuText"> 当前招标项目 </span>
+
+									</a></li>
+									<li><a id="100-080-040" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1493947183605001&quot;});">
+											<i class="menu-icon glyphicon glyphicon-plane"></i> <span
+											class="menu-text" id="menuText"> 供应商查询 </span>
+
+									</a></li>
+									<li><a id="100-080-050" href="#"
+										onclick="confirmPage(this,&quot;/srm/front/srmReport/materialDetail&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1493947183605002&quot;});">
+											<i class="menu-icon glyphicon glyphicon-list-alt"></i> <span
+											class="menu-text" id="menuText"> 物料档案查询 </span>
+
+									</a></li>
+									<li><a id="100-080-060" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1493947183605003&quot;});">
+											<i class="menu-icon glyphicon glyphicon-picture"></i> <span
+											class="menu-text" id="menuText"> 图纸档案查询 </span>
+
+									</a></li>
+									<li><a id="100-080-070" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1493947183605004&quot;});">
+											<i class="menu-icon glyphicon glyphicon-list-alt"></i> <span
+											class="menu-text" id="menuText"> 采购标准查询 </span>
+
+									</a></li>
+									<li><a id="100-080-080" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1493947183605005&quot;});">
+											<i class="menu-icon glyphicon glyphicon-tree-conifer"></i> <span
+											class="menu-text" id="menuText"> 项目专家查询 </span>
+
+									</a></li>
+									<li><a id="100-080-090" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1493947183605006&quot;});">
+											<i class="menu-icon glyphicon glyphicon-list-alt"></i> <span
+											class="menu-text" id="menuText"> 评标结果查询 </span>
+
+									</a></li>
+									<li><a id="100-080-100" href="#"
+										onclick="confirmPage(this,&quot;/srm/front/srmReport/expertsEvaluateDetail&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1493947183605008&quot;});">
+											<i class="menu-icon glyphicon glyphicon-th-list"></i> <span
+											class="menu-text" id="menuText"> 专家评分明细 </span>
+
+									</a></li>
+									<li><a id="100-080-110" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1493947183605009&quot;});">
+											<i class="menu-icon glyphicon glyphicon-play"></i> <span
+											class="menu-text" id="menuText"> 项目模拟计算 </span>
+
+									</a></li>
+									<li><a id="100-080-120" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1493947183605010&quot;});">
+											<i class="menu-icon glyphicon glyphicon-align-justify"></i> <span
+											class="menu-text" id="menuText"> 供应商参与项目 </span>
+
+									</a></li>
+									<li><a id="100-080-140" href="#"
+										onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1493858783148003&quot;});">
+											<i class="menu-icon glyphicon glyphicon-floppy-open"></i> <span
+											class="menu-text" id="menuText"> 招投标合同查询 </span>
+
+									</a></li>
+
+								</ul></li>
+
+						</ul></li>
+					<li><a id="170" href="#" class="menu-dropdown"> <i
+							class="menu-icon glyphicon glyphicon-search"></i> <span
+							class="menu-text" id="menuText"> 常用报表 </span> <i
+							class="menu-expand"></i>
+					</a>
+						<ul class="submenu">
+
+							<li><a id="170-010" href="#"
+								onclick="confirmPage(this,&quot;/mes/report/orderExecuteStatus/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160426152819000676&quot;});">
+									<i class="menu-icon glyphicon glyphicon-indent-left"></i> <span
+									class="menu-text" id="menuText"> 订单执行状况 </span>
+
+							</a></li>
+
+						</ul></li>
+					<li><a id="180" href="#" class="menu-dropdown"> <i
+							class="menu-icon glyphicon glyphicon-lock"></i> <span
+							class="menu-text" id="menuText"> 权限管理 </span> <i
+							class="menu-expand"></i>
+					</a>
+						<ul class="submenu">
+
+							<li><a id="180-010" href="#"
+								onclick="confirmPage(this,&quot;/platform/commonSecurity/changePassword&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160114110432169569&quot;});">
+									<i class="menu-icon glyphicon glyphicon-lock"></i> <span
+									class="menu-text" id="menuText"> 修改密码 </span>
+
+							</a></li>
+							<li><a id="180-020" href="#"
+								onclick="confirmPage(this,&quot;/platform/security/ctSecFunction/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160114110432169570&quot;});">
+									<i class="menu-icon glyphicon glyphicon-th"></i> <span
+									class="menu-text" id="menuText"> 功能 </span>
+
+							</a></li>
+							<li><a id="180-040" href="#"
+								onclick="confirmPage(this,&quot;/platform/security/ctSecOrganizationType/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160223151522000472&quot;});">
+									<i class="menu-icon glyphicon glyphicon-bookmark"></i> <span
+									class="menu-text" id="menuText"> 组织类型 </span>
+
+							</a></li>
+							<li><a id="180-050" href="#"
+								onclick="confirmPage(this,&quot;/platform/security/ctSecOrganization/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160128170838000369&quot;});">
+									<i class="menu-icon glyphicon glyphicon-tree-conifer"></i> <span
+									class="menu-text" id="menuText"> 组织 </span>
+
+							</a></li>
+							<li><a id="180-060" href="#"
+								onclick="confirmPage(this,&quot;/platform/security/ctSecPosition/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160224152113000989&quot;});">
+									<i class="menu-icon glyphicon glyphicon-asterisk"></i> <span
+									class="menu-text" id="menuText"> 职位信息 </span>
+
+							</a></li>
+							<li><a id="180-070" href="#"
+								onclick="confirmPage(this,&quot;/platform/security/ctSecRole/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160224154030000705&quot;});">
+									<i class="menu-icon typcn typcn-flow-merge"></i> <span
+									class="menu-text" id="menuText"> 角色 </span>
+
+							</a></li>
+							<li><a id="180-080" href="#"
+								onclick="confirmPage(this,&quot;/platform/security/ctSecPrivilegeFunction/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160225094754000910&quot;});">
+									<i class="menu-icon typcn typcn-key"></i> <span
+									class="menu-text" id="menuText"> 权限 </span>
+
+							</a></li>
+							<li><a id="180-100" href="#"
+								onclick="confirmPage(this,&quot;/platform/security/ctSecUser/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160126162443000868&quot;});">
+									<i class="menu-icon glyphicon glyphicon-user"></i> <span
+									class="menu-text" id="menuText"> 用户 </span>
+
+							</a></li>
+							<li><a id="180-110" href="#"
+								onclick="confirmPage(this,&quot;/platform/security/ctSecFunctionParameter/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160315154430000662&quot;});">
+									<i class="menu-icon glyphicon glyphicon-gbp"></i> <span
+									class="menu-text" id="menuText"> 角色功能参数 </span>
+
+							</a></li>
+
+						</ul></li>
+					<li><a id="190" href="#" class="menu-dropdown"> <i
+							class="menu-icon glyphicon glyphicon-cog"></i> <span
+							class="menu-text" id="menuText"> 系统设定 </span> <i
+							class="menu-expand"></i>
+					</a>
+						<ul class="submenu">
+
+							<li><a id="190-010" href="#"
+								onclick="confirmPage(this,&quot;/platform/system/ctSysParameter/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160114145006000865&quot;});">
+									<i class="menu-icon glyphicon glyphicon-usd"></i> <span
+									class="menu-text" id="menuText"> 系统参数 </span>
+
+							</a></li>
+							<li><a id="190-020" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160114145054000092&quot;});">
+									<i class="menu-icon glyphicon glyphicon-refresh"></i> <span
+									class="menu-text" id="menuText"> 系统状态 </span>
+
+							</a></li>
+							<li><a id="190-030" href="#"
+								onclick="confirmPage(this,&quot;/platform/system/ctSysAction/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160114110432169567&quot;});">
+									<i class="menu-icon glyphicon glyphicon-transfer"></i> <span
+									class="menu-text" id="menuText"> 系统动作 </span>
+
+							</a></li>
+							<li><a id="190-040" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1489546047107001&quot;});">
+									<i class="menu-icon glyphicon glyphicon-th-list"></i> <span
+									class="menu-text" id="menuText"> 通知类型 </span>
+
+							</a></li>
+							<li><a id="190-050" href="#"
+								onclick="confirmPage(this,&quot;/platform/system/htSysNotice/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1489558363176002&quot;});">
+									<i class="menu-icon glyphicon glyphicon-volume-up"></i> <span
+									class="menu-text" id="menuText"> 通知管理 </span>
+
+							</a></li>
+							<li><a id="190-060" href="#" class="menu-dropdown"> <i
+									class="menu-icon glyphicon glyphicon-fast-forward"></i> <span
+									class="menu-text" id="menuText"> 审批流程 </span> <i
+									class="menu-expand"></i>
+							</a>
+								<ul class="submenu">
+
+									<li><a id="190-060-010" href="#"
+										onclick="confirmPage(this,&quot;/platform/system/workflow/flowManagement/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;14810820741620017&quot;});">
+											<i class="menu-icon glyphicon glyphicon-step-forward"></i> <span
+											class="menu-text" id="menuText"> 流程管理 </span>
+
+									</a></li>
+									<li><a id="190-060-020" href="#"
+										onclick="confirmPage(this,&quot;/platform/system/workflow/ctSysFlowBusiness/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1481082074162005&quot;});">
+											<i class="menu-icon glyphicon glyphicon-step-forward"></i> <span
+											class="menu-text" id="menuText"> 流程业务信息 </span>
+
+									</a></li>
+									<li><a id="190-060-030" href="#"
+										onclick="confirmPage(this,&quot;/platform/system/workflow/ctSysFlowUser/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1481082074162009&quot;});">
+											<i class="menu-icon glyphicon glyphicon-step-forward"></i> <span
+											class="menu-text" id="menuText"> 审批人员 </span>
+
+									</a></li>
+									<li><a id="190-060-040" href="#"
+										onclick="confirmPage(this,&quot;/platform/system/workflow/userGroup/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;14810820741620013&quot;});">
+											<i class="menu-icon glyphicon glyphicon-step-forward"></i> <span
+											class="menu-text" id="menuText"> 审批组 </span>
+
+									</a></li>
+
+								</ul></li>
+							<li><a id="190-070" href="#"
+								onclick="confirmPage(this,&quot;/platform/system/ctSysApp/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1481432442566001&quot;});">
+									<i class="menu-icon glyphicon glyphicon-phone"></i> <span
+									class="menu-text" id="menuText"> APP版本管理 </span>
+
+							</a></li>
+
+						</ul></li>
+					<li><a id="200" href="#" class="menu-dropdown"> <i
+							class="menu-icon glyphicon glyphicon-glass"></i> <span
+							class="menu-text" id="menuText"> 配置系统 </span> <i
+							class="menu-expand"></i>
+					</a>
+						<ul class="submenu">
+
+							<li><a id="200-010" href="#"
+								onclick="confirmPage(this,&quot;/platform/config/ctSysI18n/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;20160429115421000283&quot;});">
+									<i class="menu-icon glyphicon glyphicon-flag"></i> <span
+									class="menu-text" id="menuText"> 国际化 </span>
+
+							</a></li>
+							<li><a id="200-020" href="#" class="menu-dropdown"> <i
+									class="menu-icon glyphicon glyphicon-glass"></i> <span
+									class="menu-text" id="menuText"> 快速编码 </span> <i
+									class="menu-expand"></i>
+							</a>
+								<ul class="submenu">
+
+									<li><a id="200-020-010" href="#"
+										onclick="confirmPage(this,&quot;/platform/config/commonCode/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1471242375339002&quot;});">
+											<i class="menu-icon glyphicon glyphicon-music"></i> <span
+											class="menu-text" id="menuText"> 代码生成器 </span>
+
+									</a></li>
+									<li><a id="200-020-020" href="#"
+										onclick="confirmPage(this,&quot;/platform/config/commonCode/fastConfigByTable&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1471309134268002&quot;});">
+											<i class="menu-icon glyphicon glyphicon-headphones"></i> <span
+											class="menu-text" id="menuText"> 快速配置-表格模式 </span>
+
+									</a></li>
+									<li><a id="200-020-030" href="#"
+										onclick="confirmPage(this,&quot;/platform/config/commonCode/fastConfigBySql&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1472717922462098&quot;});">
+											<i class="menu-icon glyphicon glyphicon-film"></i> <span
+											class="menu-text" id="menuText"> 快速配置-SQL模式 </span>
+
+									</a></li>
+									<li><a id="200-020-040" href="#"
+										onclick="confirmPage(this,&quot;/platform/config/commonCode/deleteConfigInfo&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1473727457410001&quot;});">
+											<i class="menu-icon glyphicon glyphicon-remove"></i> <span
+											class="menu-text" id="menuText"> 删除配置信息 </span>
+
+									</a></li>
+
+								</ul></li>
+							<li><a id="200-030" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1472712425056170&quot;});">
+									<i class="menu-icon glyphicon glyphicon-th"></i> <span
+									class="menu-text" id="menuText"> 对象名称 </span>
+
+							</a></li>
+							<li><a id="200-040" href="#"
+								onclick="confirmPage(this,&quot;/platform/config/itcCtPageObid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1473402125266001&quot;});">
+									<i class="menu-icon glyphicon glyphicon-th"></i> <span
+									class="menu-text" id="menuText"> 对象编码 </span>
+
+							</a></li>
+							<li><a id="200-050" href="#"
+								onclick="confirmPage(this,&quot;/platform/config/itcCtPageTbid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1473644906437002&quot;});">
+									<i class="menu-icon glyphicon glyphicon-th"></i> <span
+									class="menu-text" id="menuText"> 表格编码 </span>
+
+							</a></li>
+							<li><a id="200-060" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1471404553431001&quot;});">
+									<i class="menu-icon glyphicon glyphicon-th-large"></i> <span
+									class="menu-text" id="menuText"> 栏位信息 </span>
+
+							</a></li>
+							<li><a id="200-070" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1472609312994001&quot;});">
+									<i class="menu-icon glyphicon glyphicon-usd"></i> <span
+									class="menu-text" id="menuText"> 参数编码 </span>
+
+							</a></li>
+							<li><a id="200-080" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1467767279291003&quot;});">
+									<i class="menu-icon glyphicon glyphicon-list-alt"></i> <span
+									class="menu-text" id="menuText"> SQL设定 </span>
+
+							</a></li>
+							<li><a id="200-090" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1473746479037001&quot;});">
+									<i class="menu-icon glyphicon glyphicon-ok"></i> <span
+									class="menu-text" id="menuText"> 默认值 </span>
+
+							</a></li>
+							<li><a id="200-100" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1473752781785002&quot;});">
+									<i class="menu-icon glyphicon glyphicon-th"></i> <span
+									class="menu-text" id="menuText"> 网格 </span>
+
+							</a></li>
+							<li><a id="200-110" href="#"
+								onclick="confirmPage(this,&quot;/platform/datagrid/show&quot;,{replaceId:&quot;pageContent&quot;,functionSysId:&quot;1473753424343002&quot;});">
+									<i class="menu-icon glyphicon glyphicon-th-list"></i> <span
+									class="menu-text" id="menuText"> 网格定义 </span>
+
+							</a></li>
+
+						</ul></li>
+
+
+					<li><a href="#" id="sidebar-collapse"> <i
+							class="collapse-icon fa fa-bars"
+							style="vertical-align: middle; min-width: 30px; text-align: center;"></i>
+							<span class="menu-text"> 收起/展开 </span>
+					</a></li>
+				</ul>
+			</div>
+			<!-- Page Content -->
+			<div class="page-content" id="pageContent">
+				<div id="pageAddress">
+					<!-- Page Breadcrumb -->
+					<div class="page-breadcrumbs" style="float: left;">
+						<ul class="breadcrumb">
+							<li><i class="fa fa-home"></i> <a
+								href="/platform/commonIndex/main">首页</a></li>
+							<li class="active">数据采集</li>
+						</ul>
+					</div>
+					<!-- /Page Breadcrumb -->
+					<!-- Page Header -->
+					<div class="page-header position-relative">
+						<!--Header Buttons-->
+						<div class="header-buttons">
+							<a class="sidebar-toggler" href="#" onclick="togglerScreen();">
+								<i class="fa fa-arrows-h"></i>
+							</a> <a class="refresh" id="refresh-toggler" href="#"
+								onclick="history.go(0);"> <i
+								class="glyphicon glyphicon-refresh"></i>
+							</a> <a class="fullscreen" id="fullscreen-toggler" href="#"
+								onclick="fullScreen();"> <i
+								class="glyphicon glyphicon-fullscreen"></i>
+							</a>
+						</div>
+						<!--Header Buttons End-->
+					</div>
+					<!-- /Page Header -->
+				</div>
+				<div class="page-body">
+					<form id="queryForm" method="post" class="form-horizontal bv-form"
+						data-bv-message="This value is not valid"
+						data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+						data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+						data-bv-feedbackicons-validating="glyphicon glyphicon-refresh"
+						novalidate="novalidate">
+						<button type="submit" class="bv-hidden-submit"
+							style="display: none; width: 0px; height: 0px;"></button>
+						<input name="functionSysId" value="20160318145936000904"
+							type="hidden">
+						<div class="row" id="resultDiv">
+							<div class="col-lg-12 col-sm-12 col-xs-12">
+								<div class="widget">
+									<div class="widget-header ">
+										<span class="widget-caption">查询结果</span>
+										<div class="widget-buttons">
+											<a href="#" data-toggle="maximize"
+												onclick="widgetButtonMax(this);"><i
+												class="fa fa-expand blue"></i></a> <a href="#"
+												data-toggle="collapse" onclick="widgetButtonCollapse(this);"><i
+												class="fa fa-minus danger"></i></a> <a href="#"
+												data-toggle="dispose" onclick="widgetButtonDispose(this);">
+												<i class="fa fa-times"></i>
+											</a>
+										</div>
+									</div>
+									<div class="widget-body">
+
+										<!-- Query codition -->
+										<div class="row">
+											<div class="col-md-4">
+												<div class="form-group">
+													<label class="col-lg-4 control-label">数据收集编码</label>
+													<div class="col-lg-8">
+														<input class="form-control" name="dcId" type="text">
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="form-group">
+													<label class="col-lg-4 control-label">数据收集名称</label>
+													<div class="col-lg-8">
+														<input class="form-control" name="dcName" type="text">
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="form-group">
+													<label class="col-lg-4 control-label">数据收集类型</label>
+													<div class="col-lg-8">
+														<input class="form-control" name="dcType" type="text">
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-4">
+												<a class="btn btn-blue" href="#"
+													onclick="confirmPage(this,&quot;/mes/back/ctQulDataCollection/show&quot;,{replaceId:&quot;tableDiv&quot;,formId:&quot;queryForm&quot;});">查询</a>
+												<a class="btn btn-default purple" href="#"
+													onclick="createActionPanel(this,&quot;/mes/back/ctQulDataCollection/add&quot;,{functionSysId:&quot;20160318151822000221&quot;,dialogTitle:&quot;新增信息&quot;,dialogSize:&quot;size-normal&quot;});"><i
+													class="fa fa-plus"></i> 新增</a>
+											</div>
+										</div>
+										<!-- End Query codition -->
+										<div class="row">
+											<div class="col-md-12" id="tableDiv">
+												<hr style="margin-top: 10px; margin-bottom: 10px;">
+												<div id="dataTableId_wrapper"
+													class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+													<div class="row">
+														<div class="col-sm-6">
+															<div class="dataTables_length" id="dataTableId_length">
+																<label>显示 <select name="dataTableId_length"
+																	aria-controls="dataTableId"
+																	class="form-control input-sm"><option
+																			value="10">10</option>
+																		<option value="20">20</option>
+																		<option value="50">50</option>
+																		<option value="100">100</option>
+																		<option value="-1">All</option></select> 项结果
+																</label>
+															</div>
+														</div>
+														<div class="col-sm-6">
+															<div id="dataTableId_filter" class="dataTables_filter">
+																<label>结果内搜索:<input
+																	class="form-control input-sm" placeholder=""
+																	aria-controls="dataTableId" type="search"></label>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-sm-12">
+															<table id="dataTableId"
+																class="table table-striped table-bordered table-hover dataTable no-footer"
+																style="width: 100%;" role="grid"
+																aria-describedby="dataTableId_info">
+																<thead>
+																	<tr role="row">
+																		<th class="sorting_disabled" rowspan="1" colspan="1"
+																			style="width: 25.2px;" aria-label=" " width="25">
+																		</th>
+																		<th style="text-align: center; width: 188.2px;"
+																			class="sorting_disabled" rowspan="1" colspan="1"
+																			aria-label="操作" nowrap="">操作</th>
+																		<th style="text-align: center; width: 155.2px;"
+																			class="sorting_asc" tabindex="0"
+																			aria-controls="dataTableId" rowspan="1" colspan="1"
+																			aria-sort="ascending" aria-label="数据收集编码: 以降序排列此列">数据收集编码</th>
+																		<th style="text-align: center; width: 176.2px;"
+																			class="sorting" tabindex="0"
+																			aria-controls="dataTableId" rowspan="1" colspan="1"
+																			aria-label="数据收集名称: 以升序排列此列">数据收集名称</th>
+																		<th style="text-align: center; width: 155.2px;"
+																			class="sorting" tabindex="0"
+																			aria-controls="dataTableId" rowspan="1" colspan="1"
+																			aria-label="数据收集类型: 以升序排列此列">数据收集类型</th>
+																		<th style="text-align: center; width: 113.2px;"
+																			class="sorting" tabindex="0"
+																			aria-controls="dataTableId" rowspan="1" colspan="1"
+																			aria-label="量测类型: 以升序排列此列">量测类型</th>
+																		<th style="text-align: center; width: 92.2px;"
+																			class="sorting" tabindex="0"
+																			aria-controls="dataTableId" rowspan="1" colspan="1"
+																			aria-label="值类型: 以升序排列此列">值类型</th>
+																		<th style="text-align: center; width: 71px;"
+																			class="sorting" tabindex="0"
+																			aria-controls="dataTableId" rowspan="1" colspan="1"
+																			aria-label="描述: 以升序排列此列">描述</th>
+																	</tr>
+																</thead>
+																<tbody>
+
+
+
+
+																	<tr role="row" class="odd">
+																		<td><i
+																			class="fa fa-plus-square-o fa-lg row-details"
+																			onclick="tableExpendIcon(this,&quot;/mes/back/ctQulDcVersion/show&quot;,{&quot;VALUE_TYPE&quot;:&quot;N&quot;,&quot;MEASURE_TYPE&quot;:&quot;厚度&quot;,&quot;ID&quot;:&quot;20160318152258000052&quot;,&quot;DC_NAME&quot;:&quot;数据采集测试0001&quot;,&quot;DC_TYPE&quot;:&quot;P&quot;,&quot;DC_ID&quot;:&quot;DC_0001&quot;},{functionSysId:&quot;20160318171824000243&quot;});"></i></td>
+																		<td nowrap=""><a href="#"
+																			class="btn btn-info btn-xs edit"
+																			onclick="tableAction(this,&quot;/mes/back/ctQulDataCollection/update&quot;,&quot;queryForm&quot;,{functionSysId:&quot;20160318151856000451&quot;,type:&quot;U&quot;,dialogTitle:&quot;修改&quot;,dialogSize:&quot;size-normal&quot;,id:&quot;20160318152258000052&quot;});"><i
+																				class="fa fa-edit"></i> 修改</a> <a href="#"
+																			class="btn btn-danger btn-xs delete"
+																			onclick="tableAction(this,&quot;/mes/back/ctQulDataCollection/delete&quot;,&quot;queryForm&quot;,{functionSysId:&quot;20160318151837000634&quot;,type:&quot;D&quot;,dialogTitle:&quot;是否确认删除&quot;,id:&quot;20160318152258000052&quot;});"><i
+																				class="fa fa-trash-o"></i> 删除</a> <a href="#"
+																			class="btn btn-xs purple"
+																			onclick="tableAction(this,&quot;/mes/back/ctQulDcVersion/add&quot;,&quot;queryForm&quot;,{functionSysId:&quot;20160318171839000163&quot;,refreshFunctionSysId:&quot;20160318171824000243&quot;,type:&quot;A&quot;,dialogSize:&quot;size-wide&quot;,dialogTitle:&quot;新增关联信息&quot;,dcId:&quot;DC_0001&quot;,valueType:&quot;N&quot;,id:&quot;20160318152258000052&quot;});"><i
+																				class="fa fa-plus"></i> 新增版本</a></td>
+																		<td class="sorting_1">DC_0001</td>
+																		<td>数据采集测试0001</td>
+																		<td>P</td>
+																		<td>厚度</td>
+																		<td>N</td>
+																		<td></td>
+																	</tr>
+																	<tr role="row" class="even">
+																		<td><i
+																			class="fa fa-plus-square-o fa-lg row-details"
+																			onclick="tableExpendIcon(this,&quot;/mes/back/ctQulDcVersion/show&quot;,{&quot;VALUE_TYPE&quot;:&quot;N&quot;,&quot;MEASURE_TYPE&quot;:&quot;厚度&quot;,&quot;ID&quot;:&quot;20160318160952000989&quot;,&quot;DC_NAME&quot;:&quot;数据采集测试0002&quot;,&quot;DC_TYPE&quot;:&quot;P&quot;,&quot;DC_ID&quot;:&quot;DC_0002&quot;},{functionSysId:&quot;20160318171824000243&quot;});"></i></td>
+																		<td nowrap=""><a href="#"
+																			class="btn btn-info btn-xs edit"
+																			onclick="tableAction(this,&quot;/mes/back/ctQulDataCollection/update&quot;,&quot;queryForm&quot;,{functionSysId:&quot;20160318151856000451&quot;,type:&quot;U&quot;,dialogTitle:&quot;修改&quot;,dialogSize:&quot;size-normal&quot;,id:&quot;20160318160952000989&quot;});"><i
+																				class="fa fa-edit"></i> 修改</a> <a href="#"
+																			class="btn btn-danger btn-xs delete"
+																			onclick="tableAction(this,&quot;/mes/back/ctQulDataCollection/delete&quot;,&quot;queryForm&quot;,{functionSysId:&quot;20160318151837000634&quot;,type:&quot;D&quot;,dialogTitle:&quot;是否确认删除&quot;,id:&quot;20160318160952000989&quot;});"><i
+																				class="fa fa-trash-o"></i> 删除</a> <a href="#"
+																			class="btn btn-xs purple"
+																			onclick="tableAction(this,&quot;/mes/back/ctQulDcVersion/add&quot;,&quot;queryForm&quot;,{functionSysId:&quot;20160318171839000163&quot;,refreshFunctionSysId:&quot;20160318171824000243&quot;,type:&quot;A&quot;,dialogSize:&quot;size-wide&quot;,dialogTitle:&quot;新增关联信息&quot;,dcId:&quot;DC_0002&quot;,valueType:&quot;N&quot;,id:&quot;20160318160952000989&quot;});"><i
+																				class="fa fa-plus"></i> 新增版本</a></td>
+																		<td class="sorting_1">DC_0002</td>
+																		<td>数据采集测试0002</td>
+																		<td>P</td>
+																		<td>厚度</td>
+																		<td>N</td>
+																		<td></td>
+																	</tr>
+																	<tr role="row" class="odd">
+																		<td><i
+																			class="fa fa-plus-square-o fa-lg row-details"
+																			onclick="tableExpendIcon(this,&quot;/mes/back/ctQulDcVersion/show&quot;,{&quot;VALUE_TYPE&quot;:&quot;N&quot;,&quot;MEASURE_TYPE&quot;:&quot;宽度&quot;,&quot;ID&quot;:&quot;20160318161008000379&quot;,&quot;DC_NAME&quot;:&quot;数据采集测试0003&quot;,&quot;DC_TYPE&quot;:&quot;E&quot;,&quot;DC_ID&quot;:&quot;DC_0003&quot;},{functionSysId:&quot;20160318171824000243&quot;});"></i></td>
+																		<td nowrap=""><a href="#"
+																			class="btn btn-info btn-xs edit"
+																			onclick="tableAction(this,&quot;/mes/back/ctQulDataCollection/update&quot;,&quot;queryForm&quot;,{functionSysId:&quot;20160318151856000451&quot;,type:&quot;U&quot;,dialogTitle:&quot;修改&quot;,dialogSize:&quot;size-normal&quot;,id:&quot;20160318161008000379&quot;});"><i
+																				class="fa fa-edit"></i> 修改</a> <a href="#"
+																			class="btn btn-danger btn-xs delete"
+																			onclick="tableAction(this,&quot;/mes/back/ctQulDataCollection/delete&quot;,&quot;queryForm&quot;,{functionSysId:&quot;20160318151837000634&quot;,type:&quot;D&quot;,dialogTitle:&quot;是否确认删除&quot;,id:&quot;20160318161008000379&quot;});"><i
+																				class="fa fa-trash-o"></i> 删除</a> <a href="#"
+																			class="btn btn-xs purple"
+																			onclick="tableAction(this,&quot;/mes/back/ctQulDcVersion/add&quot;,&quot;queryForm&quot;,{functionSysId:&quot;20160318171839000163&quot;,refreshFunctionSysId:&quot;20160318171824000243&quot;,type:&quot;A&quot;,dialogSize:&quot;size-wide&quot;,dialogTitle:&quot;新增关联信息&quot;,dcId:&quot;DC_0003&quot;,valueType:&quot;N&quot;,id:&quot;20160318161008000379&quot;});"><i
+																				class="fa fa-plus"></i> 新增版本</a></td>
+																		<td class="sorting_1">DC_0003</td>
+																		<td>数据采集测试0003</td>
+																		<td>E</td>
+																		<td>宽度</td>
+																		<td>N</td>
+																		<td></td>
+																	</tr>
+																	<tr role="row" class="even">
+																		<td><i
+																			class="fa fa-plus-square-o fa-lg row-details"
+																			onclick="tableExpendIcon(this,&quot;/mes/back/ctQulDcVersion/show&quot;,{&quot;VALUE_TYPE&quot;:&quot;T&quot;,&quot;MEASURE_TYPE&quot;:&quot;污染&quot;,&quot;ID&quot;:&quot;20160318152258000053&quot;,&quot;DC_NAME&quot;:&quot;数据采集测试0004&quot;,&quot;DC_TYPE&quot;:&quot;E&quot;,&quot;DC_ID&quot;:&quot;DC_0004&quot;},{functionSysId:&quot;20160318171824000243&quot;});"></i></td>
+																		<td nowrap=""><a href="#"
+																			class="btn btn-info btn-xs edit"
+																			onclick="tableAction(this,&quot;/mes/back/ctQulDataCollection/update&quot;,&quot;queryForm&quot;,{functionSysId:&quot;20160318151856000451&quot;,type:&quot;U&quot;,dialogTitle:&quot;修改&quot;,dialogSize:&quot;size-normal&quot;,id:&quot;20160318152258000053&quot;});"><i
+																				class="fa fa-edit"></i> 修改</a> <a href="#"
+																			class="btn btn-danger btn-xs delete"
+																			onclick="tableAction(this,&quot;/mes/back/ctQulDataCollection/delete&quot;,&quot;queryForm&quot;,{functionSysId:&quot;20160318151837000634&quot;,type:&quot;D&quot;,dialogTitle:&quot;是否确认删除&quot;,id:&quot;20160318152258000053&quot;});"><i
+																				class="fa fa-trash-o"></i> 删除</a> <a href="#"
+																			class="btn btn-xs purple"
+																			onclick="tableAction(this,&quot;/mes/back/ctQulDcVersion/add&quot;,&quot;queryForm&quot;,{functionSysId:&quot;20160318171839000163&quot;,refreshFunctionSysId:&quot;20160318171824000243&quot;,type:&quot;A&quot;,dialogSize:&quot;size-wide&quot;,dialogTitle:&quot;新增关联信息&quot;,dcId:&quot;DC_0004&quot;,valueType:&quot;T&quot;,id:&quot;20160318152258000053&quot;});"><i
+																				class="fa fa-plus"></i> 新增版本</a></td>
+																		<td class="sorting_1">DC_0004</td>
+																		<td>数据采集测试0004</td>
+																		<td>E</td>
+																		<td>污染</td>
+																		<td>T</td>
+																		<td></td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-sm-5">
+															<div class="dataTables_info" id="dataTableId_info"
+																role="status" aria-live="polite">显示第 1 至 4 项结果，共 4
+																项</div>
+														</div>
+														<div class="col-sm-7">
+															<div class="dataTables_paginate paging_simple_numbers"
+																id="dataTableId_paginate">
+																<ul class="pagination">
+																	<li class="paginate_button previous disabled"
+																		id="dataTableId_previous"><a href="#"
+																		aria-controls="dataTableId" data-dt-idx="0"
+																		tabindex="0">上页</a></li>
+																	<li class="paginate_button active"><a href="#"
+																		aria-controls="dataTableId" data-dt-idx="1"
+																		tabindex="0">1</a></li>
+																	<li class="paginate_button next disabled"
+																		id="dataTableId_next"><a href="#"
+																		aria-controls="dataTableId" data-dt-idx="2"
+																		tabindex="0">下页</a></li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<script>
+	$(document).ready(function() 
+	{
+		$('#queryForm').bootstrapValidator();
+ 		var tableObj=$('#dataTableId').DataTable(
+		{
+			iDisplayLength: 12,
+			lengthMenu:[[10, 20, 50,100, -1],[10, 20, 50,100, 'All']],
+			columnDefs:[
+				{"targets": [0,1],"visible": true,"searchable": false,"sortable":false}
+			],
+			order: [[2,"asc"]]
+		}); 		
+	});	
+</script>
+			</div>
+
+
+
+			<!-- /Page Content -->
+		</div>
+	</div>
+
+	<!--Beyond Scripts-->
+	<script src="js/beyond.js"></script>
+
+	<script>
+	$(window).bind(
+			"load",
+			function() {
+				/*Sets Themed Colors Based on Themes*/
+				themeprimary = getThemeColorFromCss('themeprimary');
+				themesecondary = getThemeColorFromCss('themesecondary');
+				themethirdcolor = getThemeColorFromCss('themethirdcolor');
+				themefourthcolor = getThemeColorFromCss('themefourthcolor');
+				themefifthcolor = getThemeColorFromCss('themefifthcolor');
+				InitiateBarChart.init();
+				$.post("/platform/commonIndex/isHideMain", {},
+						function(data) {
+							$.each(data, function(i, obj) {
+								var roleId = obj.ROLE_ID;
+								if (roleId == 'GYS') {
+									$("#gys").css("display", "block");
+									$("#main").css("display", "none");
+									return false;
+								}
+							});
+						}, "json");
+
+			});
+</script>
+
+
+
+</body>
+</html>

@@ -16,11 +16,16 @@
 	<context:component-scan
 		base-package="bai.temptation.service" />
 
+	<context:component-scan
+		base-package="bai.temptation.dao" />
+
 	<!-- 注册MVC注解驱动 -->
 	<mvc:annotation-driven />
 
 	<!-- 静态资源可访问的设置方式 -->
 	<mvc:default-servlet-handler />
+
+
 
 	<!-- 配置视图解析器，可以显式设置，也可以不设置，不设置会依据SpringMVC的默认设置 -->
 	<bean id="viewResolver"

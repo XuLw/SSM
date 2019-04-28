@@ -26,7 +26,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\Users\zjs\eclipse-workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf806504445518108611.tmp"/>
+    <property name="classworlds.conf" value="C:\Users\zjs\eclipse-workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf6320149607976610859.tmp"/>
     <property name="sun.jnu.encoding" value="GBK"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.3\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk-11.0.3/bin/server;C:/Program Files/Java/jdk-11.0.3/bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Java\jdk-11.0.3\bin;D:\MySoftware\apache-maven-3.6.1\bin;D:\MySoftware\mysql-8.0.15-winx64\bin;C:\Users\zjs\AppData\Local\Microsoft\WindowsApps;D:\MySoftware\Bindizip\;D:\MySoftware\IntelliJ IDEA 2019.1.1\bin;C:\Users\zjs\Desktop;;."/>
     <property name="jdk.debug" value="release"/>

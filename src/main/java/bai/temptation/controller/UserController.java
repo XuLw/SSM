@@ -24,7 +24,12 @@ public class UserController {
 
 	@RequestMapping("/indexview")
 	public String index() {
-		return "main/index";
+		return "main/dataCollect";
+	}
+
+	@RequestMapping("/datacollect")
+	public String dataCollect() {
+		return "main/dataCollect";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)

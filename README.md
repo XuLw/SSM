@@ -34,3 +34,7 @@
 
 + Null ModelAndView returned to DispatcherServlet with name 'springmvc': assuming 
 	> SpringMVC 未找到 controller 原因：<context:component-scan base=package="" /> 与实际controller的位置不匹配
+
++ 单元测试 加载bean出错 ： @ContextConfiguration(locations = { configure file  }) locations 不能要写全称，不能写spring-*
+
++ javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify : sqlUrl 加上参数 ： useSSL=false
